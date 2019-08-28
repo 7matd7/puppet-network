@@ -44,7 +44,7 @@ OPTIONS="<%= @zlinux_options %>"
 <% if @manage_ipaddr and ! @manage_ipaddr.empty? -%>
 <% if @ipaddress.kind_of?(Array) -%>
 <%- (1..(@ipaddress.length)).each do |id| -%>
-IPADDR<%= id %>="<%= @ipaddress[id-1] %>"
+IPADDR<%= id-1 %>="<%= @ipaddress[id-1] %>"
 <% end -%>
 <% else -%>
 IPADDR="<%= @manage_ipaddr %>"
@@ -54,11 +54,11 @@ IPADDR="<%= @manage_ipaddr %>"
 <% if @ipaddress.kind_of?(Array) -%>
 <% if @netmask.kind_of?(Array) -%>
 <%- (1..(@netmask.length)).each do |id| -%>
-NETMASK<%= id %>="<%= @netmask[id-1] %>"
+NETMASK<%= id-1 %>="<%= @netmask[id-1] %>"
 <% end -%>
 <% else -%>
 <%- (1..(@ipaddress.length)).each do |id| -%>
-NETMASK<%= id %>="<%= @netmask %>"
+NETMASK<%= id-1 %>="<%= @netmask %>"
 <% end -%>
 <% end -%>
 <% else -%>
